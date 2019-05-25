@@ -1,8 +1,13 @@
 const express = require('express');
 const expressEdge = require('express-edge');
+const mongoose = require('mongoose');
 const path = require('path');
 
 const app = new express();
+
+mongoose.connect('mongodb://localhost:27017/blog-node', {useNewUrlParser:true})
+    .then(() => 'You are not connected to mongo')
+    .catch(err => console.log('Something went wrong', err));
 
 app.use(express.static('public'));
 app.use(expressEdge);
