@@ -5,6 +5,7 @@ const PostSchema = new mongoose.Schema({
     description: String,
     content: String,
     username: String,
+    image: String,
     created_at: {
         type: Date,
         default: new Date()
