@@ -9,6 +9,8 @@
   "author": "nahidsaikat",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.17.0",
+    "nodemon": "^1.19.0",
     "startbootstrap-clean-blog": "^5.0.5"
   }
 }
