@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const fileUpload = require("express-fileupload");
 const Post = require('./database/models/post');
+const storePost = require('./middleware/storePost');
 
 const app = new express();
 
@@ -19,6 +20,7 @@ app.use(fileUpload());
 app.set('views', __dirname + '/views');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use('/posts/store', storePost);
 
 app.get('/', async (req, res) => {
     const posts = await Post.find({});
