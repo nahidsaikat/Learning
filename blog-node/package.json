@@ -1,0 +1,14 @@
+{
+  "name": "blog-node",
+  "version": "1.0.0",
+  "description": "A simple blog app build on node.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nahidsaikat",
+  "license": "MIT",
+  "dependencies": {
+    "startbootstrap-clean-blog": "^5.0.5"
+  }
+}
