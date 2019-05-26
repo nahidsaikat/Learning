@@ -8,6 +8,8 @@ const createPostController = require('./controllers/createPost');
 const homePageController = require('./controllers/homePage');
 const storePostController = require('./controllers/storePost');
 const getPostController = require('./controllers/getPost');
+const createUserController = require("./controllers/createUser");
+const storeUserController = require('./controllers/storeUser');
  
 const app = new express();
  
@@ -31,6 +33,8 @@ app.get("/", homePageController);
 app.get("/post/new", createPostController);
 app.post("/post/store", storePostController);
 app.get("/post/:id", getPostController);
+app.get("/auth/register", createUserController);
+app.post("/users/register", storeUserController);
  
 app.listen(3000, () => {
   console.log("App listening on port 3000");
