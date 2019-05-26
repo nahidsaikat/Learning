@@ -9,10 +9,14 @@
   "author": "nahidsaikat",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.3",
     "express": "^4.17.0",
     "express-edge": "^1.0.0",
     "express-fileupload": "^1.1.4",
+    "express-session": "^1.16.1",
     "mongoose": "^5.5.11",
     "nodemon": "^1.19.0",
     "startbootstrap-clean-blog": "^5.0.5"
