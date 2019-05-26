@@ -51,6 +51,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const storePost = require('./middleware/storePost');
  
 app.use('/post/store', storePost);
+app.use('/auth/logout', redirectIfAuthenticated);
  
 app.get("/", homePageController);
 app.get("/post/new", auth, createPostController);
@@ -60,7 +61,7 @@ app.get('/auth/login', loginController);
 app.post('/users/login', loginUserController);
 app.get("/auth/register", createUserController);
 app.post("/users/register", storeUserController);
-app.get("/auth/logout", redirectIfAuthenticated, logoutController);
+app.get("/auth/logout", logoutController);
 
 app.listen(3000, () => {
   console.log("App listening on port 3000");
