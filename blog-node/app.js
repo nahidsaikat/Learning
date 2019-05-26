@@ -14,6 +14,7 @@ const createUserController = require("./controllers/createUser");
 const storeUserController = require('./controllers/storeUser');
 const loginController = require("./controllers/login");
 const loginUserController = require('./controllers/loginUser');
+const auth = require("./middleware/auth");
  
 const app = new express();
  
@@ -43,7 +44,7 @@ const storePost = require('./middleware/storePost');
 app.use('/post/store', storePost);
  
 app.get("/", homePageController);
-app.get("/post/new", createPostController);
+app.get("/post/new", auth, createPostController);
 app.post("/post/store", storePostController);
 app.get("/post/:id", getPostController);
 app.get('/auth/login', loginController);
