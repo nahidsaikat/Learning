@@ -1,5 +1,6 @@
 const expressEdge = require("express-edge");
 const express = require("express");
+const edge = require("edge.js");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
@@ -16,6 +17,8 @@ const storeUserController = require('./controllers/storeUser');
 const loginController = require("./controllers/login");
 const loginUserController = require('./controllers/loginUser');
 const auth = require("./middleware/auth");
+const redirectIfAuthenticated = require('./middleware/redirectIfAuthenticated');
+const logoutController = require("./controllers/logout");
  
 const app = new express();
  
@@ -37,6 +40,10 @@ app.use(fileUpload());
 app.use(express.static("public"));
 app.use(expressEdge);
 app.set('views', __dirname + '/views');
+app.use('*', (req, res, next) => {
+  edge.global('auth', req.session.userId);
+  next();
+});
  
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -53,7 +60,8 @@ app.get('/auth/login', loginController);
 app.post('/users/login', loginUserController);
 app.get("/auth/register", createUserController);
 app.post("/users/register", storeUserController);
- 
+app.get("/auth/logout", redirectIfAuthenticated, logoutController);
+
 app.listen(3000, () => {
   console.log("App listening on port 3000");
 });
