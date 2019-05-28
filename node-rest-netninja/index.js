@@ -12,7 +12,9 @@ db.once('open',() => {
     console.log('db connect successfully');
 });
 mongoose.Promise = global.Promise;
- 
+
+app.use(express.static('public'))
+
 app.use(bodyParser.json());
 
 // initialize routes
