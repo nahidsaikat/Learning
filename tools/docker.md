@@ -17,3 +17,26 @@
 * docker history imageName
 
 https://www.youtube.com/watch?v=QBOcKdh-fwQ&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp2rK&index=10&t=0s
+
+## Docker Containers Command
+
+* docker ps
+* docker run ImageName
+* docker start ContainerName/ID
+* docker stop ContainerName/ID
+
+* docker pause ContainerName/ID
+* docker unpause  ContainerName/ID
+
+* docker top ContainerName/ID
+* docker stats ContainerName/ID
+
+* docker attach ContainerName/ID
+
+* docker kill ContainerName/ID
+* docker rm ContainerName/ID
+
+* docker history ImageName/ID
+
+https://www.youtube.com/watch?v=Rv3DAJbDrS0&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp2rK&index=11&t=0s
+
