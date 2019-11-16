@@ -48,3 +48,6 @@ https://www.youtube.com/watch?v=Rv3DAJbDrS0&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp
 * docker run image
 
 https://www.youtube.com/watch?v=LQjaJINkQXY&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp2rK&index=13&t=0s
+
+https://github.com/wsargent/docker-cheat-sheet#dockerfile
+https://docs.docker.com/engine/reference/builder/#environment-replacement
