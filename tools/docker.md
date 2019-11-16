@@ -40,3 +40,11 @@ https://www.youtube.com/watch?v=QBOcKdh-fwQ&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp
 
 https://www.youtube.com/watch?v=Rv3DAJbDrS0&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp2rK&index=11&t=0s
 
+## Docker File Command
+
+* docker build 
+* docker build -t ImageName:Tag directoryOfDocekrfile
+
+* docker run image
+
+https://www.youtube.com/watch?v=LQjaJINkQXY&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp2rK&index=13&t=0s
