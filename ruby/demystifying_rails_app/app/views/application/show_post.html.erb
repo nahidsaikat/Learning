@@ -16,9 +16,26 @@
       </small>
 
       <p class="body"><%= post.body %></p>
-    </div>
 
+      <br /><br />
+      <div class="comments">
+        <h3>Comments:</h3>
+        <hr />
+        <% comments.each_with_index do |comment, index| %>
+          <div class="comment">
+            <small class="comment_meta">
+              <span class="comment_author">#<%= index+1 %> by <%= comment['author'] %> -</span>
+              <em class="comment_created_at"><%= comment['created_at'] %></em>
+            </small>
+            <p class="comment_body"><%= comment['body'] %></p>
+          </div>
+          <hr />
+        <% end %>
+      </div>
+    
+    </div>
     <br />
+    <a href="/list_posts">Back to Posts</a>
 
   </body>
 </html>
