@@ -16,6 +16,9 @@
 * docker inspect
 * docker history imageName
 
+* docker rmi $(docker images -q)       # Remove all images
+* docker rmi $(docker images -q) --force     # Remove all images forcefully
+
 https://www.youtube.com/watch?v=QBOcKdh-fwQ&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp2rK&index=10&t=0s
 
 ## Docker Containers Command
@@ -37,6 +40,9 @@ https://www.youtube.com/watch?v=QBOcKdh-fwQ&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp
 * docker rm ContainerName/ID
 
 * docker history ImageName/ID
+
+* docker stop $(docker ps -a -q)    # Stop all container
+* docker rm $(docker ps -a -q)   # Remove all container
 
 https://www.youtube.com/watch?v=Rv3DAJbDrS0&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp2rK&index=11&t=0s
 
