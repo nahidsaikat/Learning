@@ -1,0 +1,24 @@
+<!-- app/views/application/show_post.html.erb -->
+
+<html>
+  <body>
+
+    <a href="/list_posts">Back to Posts</a>
+
+    <div class="post">
+      <h2 class="title">
+        <%= post.title %>
+      </h2>
+
+      <small class="meta">
+        <span class="author">by <%= post.author %> -</span>
+        <em class="created_at"><%= post.created_at %></em>
+      </small>
+
+      <p class="body"><%= post.body %></p>
+    </div>
+
+    <br />
+
+  </body>
+</html>
