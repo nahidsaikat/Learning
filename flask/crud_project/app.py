@@ -1,6 +1,8 @@
 from flask import Flask, request
+from marshmallow import ValidationError
 
 from models.users import UserModel
+from schemas.users import UserSchema
 
 app = Flask(__name__)
 
@@ -12,40 +14,47 @@ def hello():
 
 @app.route('/user_list/')
 def user_list():
-    all_users = []
-    for item in UserModel.scan():
-        all_users.append(item.__dict__['attribute_values'])
-    return {"user_list": all_users}
+    return {"user_list": UserSchema(many=True).dump(UserModel.scan())}
 
 
 @app.route('/user_create/', methods=['POST'])
 def user_create():
-    user = UserModel(**request.json)
-    user.save()
+    error = None
+    data = request.json
+    try:
+        data = UserSchema().load(request.json)
+    except ValidationError as err:
+        error = err
+    if not error:
+        user = UserModel(**data)
+        user.save()
     return {
-        "status": "success",
-        "message": "User created successfully!",
-        "email": user.email,
-        "data": user.__dict__['attribute_values']
+        "status": "error" if error else "success",
+        "error": error,
+        "data": data
     }
 
 
 @app.route('/user_update/<string:email>/', methods=['PATCH'])
 def user_update(email):
+    error = None
     actions = []
-    for key, value in request.json.items():
-        actions.append(
-            getattr(UserModel, key).set(value)
-        )
+    data = {}
+
+    try:
+        data = UserSchema().load(request.json)
+    except ValidationError as err:
+        error = err
+
+    for key, value in data.items():
+        actions.append(getattr(UserModel, key).set(value))
     user = UserModel.get(email)
-    user.update(
-        actions=actions
-    )
+    user.update(actions=actions)
+
     return {
-        "status": "success",
-        "message": "User updated successfully!",
-        "email": user.email,
-        "data": user.__dict__['attribute_values']
+        "status": "error" if error else "success",
+        "error": error,
+        "data": UserSchema().dump(user)
     }
 
 
