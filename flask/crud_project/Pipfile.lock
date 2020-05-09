@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b9f699f9e68e49aa34fd409f854c548a2b54a0aa65e7a587de8122dc51f51607"
+            "sha256": "e2bf829e65635df4f108a38c57b332f8ae3ef80f8b1322ae4973968df125f60f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,10 +18,10 @@
     "default": {
         "botocore": {
             "hashes": [
-                "sha256:19c11d11aa4f5eee6a21aef85d311dd758dc6df59306e72176c980c3259db71f",
-                "sha256:914059286a560ccca6c5c9fa7edd8de8533176090230676193a2e3fbcf214a9e"
+                "sha256:4aaf6c94bcaace260138d32eae144be1b5d2ddce9ef0f395da32c68e106ff20f",
+                "sha256:86f7f1c489887f9e3c2ede598e2a30f8bd259c11e8ebe25e897e40231b3f4bc8"
             ],
-            "version": "==1.15.19"
+            "version": "==1.15.21"
         },
         "click": {
             "hashes": [
@@ -104,6 +104,14 @@
                 "sha256:e8313f01ba26fbbe36c7be1966a7b7424942f670f38e666995b88d012765b9be"
             ],
             "version": "==1.1.1"
+        },
+        "marshmallow": {
+            "hashes": [
+                "sha256:90854221bbb1498d003a0c3cc9d8390259137551917961c8b5258c64026b2f85",
+                "sha256:ac2e13b30165501b7d41fc0371b8df35944f5849769d136f20e2c5f6cdc6e665"
+            ],
+            "index": "pypi",
+            "version": "==3.5.1"
         },
         "pynamodb": {
             "hashes": [
