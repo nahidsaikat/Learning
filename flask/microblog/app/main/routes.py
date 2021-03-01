@@ -8,7 +8,7 @@ from flask_login import current_user, login_required
 from guess_language import guess_language
 
 from app import app, db
-from app.forms import EditProfileForm, EmptyForm, PostForm
+from app.main.forms import EditProfileForm, EmptyForm, PostForm
 from app.models import User, Post
 from app.translate import translate
 
