@@ -5,7 +5,7 @@ from werkzeug.utils import redirect
 
 from app import db
 from app.auth import bp
-from app.auth.email import send_password_reset_email
+from app.email import send_password_reset_email
 from app.auth.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm
 from app.models import User
 
