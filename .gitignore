@@ -174,4 +174,5 @@ typings/
 *.tfstate.*
 
 #docker
-.docker
+django/realest_estate/backend/.docker/
+django/realest_estate/backend/media/
