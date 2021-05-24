@@ -4,13 +4,13 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    command: wait-for-it realest-estate-db:5436 -- python manage.py test --noinput
+    command: wait-for-it realest-estate-db:5432 -- python manage.py test --noinput
     environment:
       - DB_USER=postgres
       - DB_PASSWORD=password
-      - DB_NAME=realest-estate
+      - DB_NAME=realest_estate
       - DB_HOST=realest-estate-db
-      - DB_PORT=5436
+      - DB_PORT=5432
     depends_on:
       - realest-estate-db
   realest-estate-web:
@@ -19,8 +19,8 @@ services:
       dockerfile: Dockerfile
     environment:
       DEV_MODE: 'true'
-      DB_HOST: 'realest-estate-db'
-    command: wait-for-it realest-estate-db:5436 -- python manage.py runserver 0.0.0.0:8000
+      DB_HOST: realest-estate-db
+    command: wait-for-it realest-estate-db:5432 -- python3 manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
     depends_on:
@@ -29,11 +29,11 @@ services:
     image: postgres:12
     container_name: realest-estate-db
     ports:
-      - "5436:5432"
+      - "5432:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=realest-estate
+      - POSTGRES_DB=realest_estate
     volumes:
       - ./.docker/data/realest-db:/var/lib/postgresql/data
 volumes:
