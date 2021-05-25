@@ -42,7 +42,8 @@ INSTALLED_APPS = [
 
     'accounts',
     'realtors',
-    'listings'
+    'listings',
+    'contacts',
 ]
 
 MIDDLEWARE = [
@@ -161,3 +162,5 @@ CORS_ORIGIN_ALLOW_ALL = True
 FILE_UPLOAD_PERMISSIONS = 0o640
 
 AUTH_USER_MODEL = 'accounts.UserAccount'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
