@@ -1,9 +1,9 @@
-import Reach from 'react';
+import React from 'react';
 
-const signIn = () => {
+const logIn = () => (
     <div>
-        signIn
+        logIn
     </div>
-};
+);
 
-export default signIn;
+export default logIn;

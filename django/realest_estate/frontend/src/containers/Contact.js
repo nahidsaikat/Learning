@@ -1,9 +1,9 @@
-import Reach from 'react';
+import React from 'react';
 
-const contact = () => {
+const contact = () => (
     <div>
         contact
     </div>
-};
+);
 
 export default contact;

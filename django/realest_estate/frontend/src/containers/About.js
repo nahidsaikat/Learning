@@ -1,9 +1,9 @@
-import Reach from 'react';
+import React from 'react';
 
-const about = () => {
+const about = () => (
     <div>
         about
     </div>
-};
+);
 
 export default about;

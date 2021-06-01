@@ -7,9 +7,12 @@ import Listing from './containers/Listings';
 import ListingDetail from './containers/ListingDetail';
 import LogIn from './containers/LogIn';
 import SignUp from './containers/SignUp';
+import NotFound from './components/NotFound';
 import Layout from './hocs/Layout';
 
-const App = () => {
+import './sass/main.scss';
+
+const App = () => (
   <Router>
     <Layout>
       <Switch>
@@ -20,9 +23,10 @@ const App = () => {
         <Route exact path='/listing/:id' component={ListingDetail} />
         <Route exact path='/login' component={LogIn} />
         <Route exact path='/signup' component={SignUp} />
+        <Route component={NotFound} />
       </Switch>
     </Layout>
   </Router>
-};
+);
 
 export default App;
