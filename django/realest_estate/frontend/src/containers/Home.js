@@ -59,7 +59,7 @@ const Home = () => {
                                 visitPage={visitPage}
                                 previous={previousNumber}
                                 next={nextNumber}
-                                action={active}
+                                active={active}
                                 setActive={setActive}
                             />
                         ) : null

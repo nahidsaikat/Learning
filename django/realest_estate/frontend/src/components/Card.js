@@ -23,7 +23,7 @@ const card = (props) => {
                 <div className='col-1-of-3'>
                     <p className='card__saletype'>${props.sale_type}</p>
                     <p className='card__hometype'>${props.home_type}</p>
-                    <p className='card__sqft'>Sqft: ${props.sqft}</p>
+                    <p className='card__sqft'>Sqft: {props.sqft}</p>
                 </div>
             </div>
             <Link className='card__link' to={`/listings/${props.slug}`}>View Listing</Link>
