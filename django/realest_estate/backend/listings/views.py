@@ -19,6 +19,10 @@ class ListingView(RetrieveAPIView):
     queryset = Listing.objects.order_by('-list_date').filter(is_published=True)
     lookup_field = 'slug'
 
+    def retrieve(self, request, *args, **kwargs):
+        import pdb;pdb.set_trace()
+        return super(ListingView, self).retrieve(request, *args, **kwargs)
+
 
 class SearchView(APIView):
     permission_classes = [permissions.AllowAny]
