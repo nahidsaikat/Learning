@@ -119,4 +119,4 @@ Contact.propTypes = {
     setAlert: PropTypes.func.isRequired
 };
 
-export default connect(null, { setAlert })(contact);
+export default connect(null, { setAlert })(Contact);
